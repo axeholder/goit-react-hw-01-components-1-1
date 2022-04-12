@@ -14,13 +14,11 @@ export const Statistics = ({ title, stats }) => {
     <StatisticsSection>
       {title && <StatisticsTitle>{title}</StatisticsTitle>}
       <StatisticsList>
-        {stats.map(dataItem => {
+        {stats.map(({ id, label, percentage }) => {
           return (
-            <StatisticsItem key={dataItem.id}>
-              <StatisticsLabel>{dataItem.label}</StatisticsLabel>
-              <StatisticsPercentage>
-                {dataItem.percentage}%
-              </StatisticsPercentage>
+            <StatisticsItem key={id}>
+              <StatisticsLabel>{label}</StatisticsLabel>
+              <StatisticsPercentage>{percentage}%</StatisticsPercentage>
             </StatisticsItem>
           );
         })}
